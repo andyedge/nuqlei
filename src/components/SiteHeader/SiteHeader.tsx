@@ -11,12 +11,6 @@ export interface NavItem {
 }
 
 export interface SiteHeaderProps {
-  /** Show or hide the top announcement banner */
-  showBanner?: boolean;
-  /** Badge label inside the banner */
-  bannerBadge?: string;
-  /** Announcement message in the banner */
-  bannerMessage?: string;
   /** Navigation items */
   navItems?: NavItem[];
   /** Primary CTA button label */
@@ -65,9 +59,6 @@ function CloseIcon() {
 
 // ── Component ─────────────────────────────────────────────────────────────
 export function SiteHeader({
-  showBanner = true,
-  bannerBadge = "New",
-  bannerMessage = "Frontend Pages Added",
   navItems = DEFAULT_NAV_ITEMS,
   primaryCtaLabel = "Create Project",
   onPrimaryCtaClick,
@@ -78,24 +69,6 @@ export function SiteHeader({
 
   return (
     <header>
-      {/* ── Announcement Banner (desktop) ── */}
-      {showBanner && (
-        <div className={styles.banner} role="banner">
-          <div className={styles.bannerInner}>
-            <span className={styles.bannerBadge}>{bannerBadge}</span>
-            <span className={styles.bannerMessage}>{bannerMessage}</span>
-          </div>
-        </div>
-      )}
-
-      {/* ── Announcement Banner (mobile — inline, no overflow) ── */}
-      {showBanner && (
-        <div className={`${styles.mobileBanner} ${styles.visible}`} role="banner">
-          <span className={styles.bannerBadge}>{bannerBadge}</span>
-          <span className={styles.bannerMessage}>{bannerMessage}</span>
-        </div>
-      )}
-
       {/* ── Navbar ── */}
       <nav className={styles.navbar} aria-label="Main navigation">
         <div className={styles.navInner}>

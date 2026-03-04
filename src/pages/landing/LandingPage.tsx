@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom";
+import { BannerHeader } from "../../components/BannerHeader";
 import { SiteHeader } from "../../components/SiteHeader";
 import { Hero } from "./sections/Hero";
 import { Features } from "./sections/Features";
@@ -13,6 +14,11 @@ export function LandingPage() {
 
   return (
     <div style={{ minWidth: "320px" }}>
+      <BannerHeader
+        badge="New"
+        message="Frontend Pages Added"
+        dismissible
+      />
       <SiteHeader
         onPrimaryCtaClick={() => navigate("/register")}
         onSecondaryCtaClick={() => navigate("/sign-in")}
