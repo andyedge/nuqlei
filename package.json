@@ -10,7 +10,8 @@
     "build": "vite build",
     "preview": "vite preview",
     "storybook": "storybook dev -p 6007",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "ci-install": "PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD=1 npm ci"
   },
   "keywords": [
     "design-tokens",
