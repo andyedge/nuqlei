@@ -1,12 +1,9 @@
 import { useState, FormEvent } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { InputField } from "../../components/InputField";
+import { NuqleiLogo } from "../../components/NuqleiLogo";
 import styles from "./SignIn.module.css";
 
-// Figma asset URLs (valid for 7 days — replace if expired)
-const LOGO_SYMBOL = "https://www.figma.com/api/mcp/asset/b43e90a5-c72e-4d82-bda3-19c551acf72e";
-const LOGO_WORDMARK = "https://www.figma.com/api/mcp/asset/8607bbe3-698d-485b-847d-d44b5732864a";
-const LOGO_SYMBOL_SM = "https://www.figma.com/api/mcp/asset/85f91e71-dd9e-4d14-854d-400638589d17";
 const HERO_BG = "https://www.figma.com/api/mcp/asset/eacc74ef-4c2b-4fdf-a217-25439911f5ad";
 
 export function SignIn() {
@@ -39,8 +36,7 @@ export function SignIn() {
         <div className={styles.heroContent}>
           {/* Logo */}
           <Link to="/" className={styles.heroLogo}>
-            <img src={LOGO_SYMBOL} alt="" className={styles.heroLogoSymbol} />
-            <img src={LOGO_WORDMARK} alt="Nuqlei" className={styles.heroLogoWordmark} />
+            <NuqleiLogo size="md" variant="white" />
           </Link>
 
           {/* Copy + CTA */}
@@ -64,7 +60,7 @@ export function SignIn() {
       <div className={styles.formSide}>
         <div className={styles.card}>
           {/* Small logo mark inside card */}
-          <img src={LOGO_SYMBOL_SM} alt="Nuqlei" className={styles.cardLogo} />
+          <NuqleiLogo size="xs" variant="default" symbolOnly />
 
           {/* Title */}
           <div className={styles.titleBlock}>

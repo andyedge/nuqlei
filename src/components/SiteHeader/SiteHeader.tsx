@@ -1,9 +1,6 @@
 import { useState } from "react";
 import styles from "./SiteHeader.module.css";
-
-// ── Asset URLs (from Figma) ───────────────────────────────────────────────
-const LOGO_SYMBOL = "https://www.figma.com/api/mcp/asset/9c3cc6cc-c0b2-47d1-99f4-6ecd25dd663a";
-const LOGO_WORDMARK = "https://www.figma.com/api/mcp/asset/aed989f8-d820-491d-9705-65d98e39aadd";
+import { NuqleiLogo } from "../NuqleiLogo";
 
 // ── Types ─────────────────────────────────────────────────────────────────
 export interface NavItem {
@@ -105,8 +102,7 @@ export function SiteHeader({
 
           {/* Logo */}
           <a href="/" className={styles.logo} aria-label="Nuqlei home">
-            <img src={LOGO_SYMBOL} alt="" className={styles.logoSymbol} />
-            <img src={LOGO_WORDMARK} alt="Nuqlei" className={styles.logoWordmark} />
+            <NuqleiLogo size="sm" variant="default" />
           </a>
 
           {/* Desktop nav links */}
@@ -171,8 +167,7 @@ export function SiteHeader({
         <div className={styles.mobileDrawer}>
           <div className={styles.mobileMenuHeader}>
             <a href="/" className={styles.logo} aria-label="Nuqlei home">
-              <img src={LOGO_SYMBOL} alt="" className={styles.logoSymbol} />
-              <img src={LOGO_WORDMARK} alt="Nuqlei" className={styles.logoWordmark} />
+              <NuqleiLogo size="sm" variant="default" />
             </a>
             <button
               className={styles.mobileCloseButton}

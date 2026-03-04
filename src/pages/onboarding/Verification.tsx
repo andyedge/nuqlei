@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { NuqleiLogo } from "../../components/NuqleiLogo";
 import styles from "./Verification.module.css";
 
 type VerificationState = "pending" | "success" | "failed";
@@ -6,14 +7,6 @@ type VerificationState = "pending" | "success" | "failed";
 interface VerificationProps {
   state: VerificationState;
 }
-
-const nuqleiLogoSvg = (
-  <svg width="26" height="26" viewBox="0 0 28 28" fill="none">
-    <rect width="28" height="28" rx="8" fill="#00A6F4" />
-    <path d="M8 20V10l6-3 6 3v10l-6 3-6-3z" stroke="#fff" strokeWidth="1.8" fill="none" strokeLinejoin="round" />
-    <circle cx="14" cy="14" r="2.5" fill="#fff" />
-  </svg>
-);
 
 const CONTENT = {
   pending: {
@@ -67,8 +60,7 @@ export function Verification({ state }: VerificationProps) {
   return (
     <div className={styles.page}>
       <Link to="/" className={styles.logo}>
-        {nuqleiLogoSvg}
-        <span className={styles.logoText}>Nuqlei</span>
+        <NuqleiLogo size="sm" variant="default" />
       </Link>
 
       <div className={styles.card}>

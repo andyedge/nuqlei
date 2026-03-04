@@ -1,7 +1,5 @@
 import styles from "./Navbar.module.css";
-
-const symbolSrc = "https://www.figma.com/api/mcp/asset/0dc926c7-b6b7-48f2-8ba3-011c2c7fcfc5";
-const wordmarkSrc = "https://www.figma.com/api/mcp/asset/dbd799f9-298d-4daa-b37b-7030ae1e0d27";
+import { NuqleiLogo } from "../../../components/NuqleiLogo";
 
 function ChevronDownIcon() {
   return (
@@ -17,8 +15,7 @@ export function Navbar() {
       <div className={styles.inner}>
         {/* Logo */}
         <div className={styles.logo}>
-          <img src={symbolSrc} alt="Nuqlei symbol" className={styles.logoSymbol} />
-          <img src={wordmarkSrc} alt="Nuqlei" className={styles.logoWordmark} />
+          <NuqleiLogo size="sm" variant="default" />
         </div>
 
         {/* Navigation Links */}

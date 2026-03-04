@@ -1,14 +1,7 @@
 import { ReactNode } from "react";
 import { Link } from "react-router-dom";
+import { NuqleiLogo } from "../NuqleiLogo";
 import styles from "./AuthLayout.module.css";
-
-const nuqleiLogoSvg = (
-  <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
-    <rect width="28" height="28" rx="8" fill="#00A6F4" />
-    <path d="M8 20V10l6-3 6 3v10l-6 3-6-3z" stroke="#fff" strokeWidth="1.8" fill="none" strokeLinejoin="round" />
-    <circle cx="14" cy="14" r="2.5" fill="#fff" />
-  </svg>
-);
 
 interface AuthLayoutProps {
   children: ReactNode;
@@ -23,8 +16,7 @@ export function AuthLayout({ children, eyebrow, title, description }: AuthLayout
       {/* Left hero panel */}
       <aside className={styles.hero}>
         <Link to="/" className={styles.heroLogo}>
-          {nuqleiLogoSvg}
-          <span className={styles.heroLogoText}>Nuqlei</span>
+          <NuqleiLogo size="sm" variant="white" />
         </Link>
 
         <div className={styles.heroContent}>

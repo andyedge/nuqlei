@@ -1,7 +1,5 @@
 import styles from "./Footer.module.css";
-
-const symbolSrc = "https://www.figma.com/api/mcp/asset/0dc926c7-b6b7-48f2-8ba3-011c2c7fcfc5";
-const wordmarkDarkSrc = "https://www.figma.com/api/mcp/asset/3854b540-aeb1-4236-95d6-e38c048bac53";
+import { NuqleiLogo } from "../../../components/NuqleiLogo";
 
 export function Footer() {
   return (
@@ -12,8 +10,7 @@ export function Footer() {
           {/* Brand */}
           <div className={styles.brand}>
             <div className={styles.logo}>
-              <img src={symbolSrc} alt="Nuqlei symbol" className={styles.logoSymbol} />
-              <img src={wordmarkDarkSrc} alt="Nuqlei" className={styles.logoWordmark} />
+              <NuqleiLogo size="sm" variant="black" />
             </div>
             <p className={styles.brandDesc}>
               The trusted B2B marketplace for industrial automation
@@ -46,7 +43,7 @@ export function Footer() {
         {/* Bottom row */}
         <div className={styles.bottomRow}>
           <div className={styles.bottomLeft}>
-            <img src={symbolSrc} alt="Nuqlei" className={styles.symbolSmall} />
+            <NuqleiLogo size="xs" variant="black" symbolOnly />
             <span className={styles.copyright}>All rights reserved. Nuqlei 2026.</span>
           </div>
           <p className={styles.producer}>

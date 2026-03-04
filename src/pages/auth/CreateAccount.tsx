@@ -1,13 +1,10 @@
 import { useState, FormEvent } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { InputField } from "../../components/InputField";
+import { NuqleiLogo } from "../../components/NuqleiLogo";
 import styles from "./CreateAccount.module.css";
 
-// Figma asset URLs (valid for 7 days)
-const LOGO_SYMBOL_LG   = "https://www.figma.com/api/mcp/asset/ca77d3ac-a1a7-48c6-aecd-86a334b9a2c3";
-const LOGO_WORDMARK_LG = "https://www.figma.com/api/mcp/asset/ecdfb56c-3b1c-4411-9546-7d5b9f456c79";
-const LOGO_SYMBOL_SM   = "https://www.figma.com/api/mcp/asset/f4e72d8c-73f7-43c0-9f02-108e7958304b";
-const HERO_BG          = "https://www.figma.com/api/mcp/asset/541f8515-702d-4085-b807-e8eee9261fe2";
+const HERO_BG = "https://www.figma.com/api/mcp/asset/541f8515-702d-4085-b807-e8eee9261fe2";
 
 const ROLES = [
   { value: "buyer",    label: "Buyer" },
@@ -46,8 +43,7 @@ export function CreateAccount() {
 
         <div className={styles.heroContent}>
           <Link to="/" className={styles.heroLogo}>
-            <img src={LOGO_SYMBOL_LG}   alt=""       className={styles.heroLogoSymbol} />
-            <img src={LOGO_WORDMARK_LG} alt="Nuqlei" className={styles.heroLogoWordmark} />
+            <NuqleiLogo size="md" variant="white" />
           </Link>
 
           <div className={styles.heroCopy}>
@@ -72,7 +68,7 @@ export function CreateAccount() {
       <div className={styles.formSide}>
         <div className={styles.formInner}>
           {/* Small logo mark */}
-          <img src={LOGO_SYMBOL_SM} alt="Nuqlei" className={styles.logoMark} />
+          <NuqleiLogo size="xs" variant="default" symbolOnly />
 
           {/* Title */}
           <div className={styles.titleBlock}>
