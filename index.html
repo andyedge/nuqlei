@@ -11,26 +11,24 @@
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&family=Inter:wght@400;600;700&display=swap"
       rel="stylesheet"
     />
-    <!-- GitHub Pages SPA: restore original path after 404 redirect -->
+    <!-- GitHub Pages SPA: restore original path after 404.html redirect -->
     <script>
       (function() {
-        var redirect = sessionStorage.redirect;
-        delete sessionStorage.redirect;
-        if (redirect && redirect !== location.href) {
-          history.replaceState(null, null, redirect);
-        }
-        // Also handle the ?p= query param set by 404.html
+        // Handle ?p= query param set by 404.html
         var search = window.location.search;
-        if (search.indexOf('?p=') === 0 || search.indexOf('&p=') !== -1 || search.indexOf('?p=') !== -1) {
+        if (search && search.indexOf('p=') !== -1) {
           var params = search.slice(1).split('&').reduce(function(p, s) {
             var r = s.split('=');
-            p[r[0]] = r.slice(1).join('=').replace(/~and~/g, '&');
+            p[decodeURIComponent(r[0])] = decodeURIComponent(r.slice(1).join('=').replace(/~and~/g, '&'));
             return p;
           }, {});
           if (params.p !== undefined) {
+            // pathname is '/nuqlei/' — strip trailing slash before appending route
+            var base = window.location.pathname.replace(/\/$/, '');
+            var route = params.p || '/';
             window.history.replaceState(
               null, null,
-              window.location.pathname.slice(0, -1) + (params.p || '/') +
+              base + route +
               (params.q ? '?' + params.q : '') +
               window.location.hash
             );
