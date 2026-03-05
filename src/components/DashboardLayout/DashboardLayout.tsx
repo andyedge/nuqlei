@@ -1,5 +1,5 @@
 import { useState, ReactNode } from "react";
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { NuqleiLogo } from "../NuqleiLogo";
 
 // ── Avatar image from Figma ──────────────────────────────────────────────────

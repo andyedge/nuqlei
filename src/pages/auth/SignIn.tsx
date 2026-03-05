@@ -128,7 +128,7 @@ export function SignIn() {
           </form>
 
           <p className="text-center text-sm text-text-secondary">
-            Dont have an account?{" "}
+            Don't have an account?{" "}
             <Link
               to="/register"
               className="text-sky-brand-600 font-semibold hover:text-sky-brand-800 transition-colors"

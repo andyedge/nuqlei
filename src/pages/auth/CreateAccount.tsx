@@ -1,5 +1,5 @@
-import { useState, FormEvent, useEffect } from "react";
-import { Link, useNavigate, useSearchParams } from "react-router-dom";
+import { useState, FormEvent } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import { InputField } from "../../components/InputField";
 import { NuqleiLogo } from "../../components/NuqleiLogo";
 import { Button } from "../../components/Button";
@@ -8,19 +8,11 @@ const HERO_BG = "https://www.figma.com/api/mcp/asset/541f8515-702d-4085-b807-e8e
 
 export function CreateAccount() {
   const navigate = useNavigate();
-  const [searchParams] = useSearchParams();
-  // Pre-select Buyer when coming from the "Create Project" CTA
-  const [role, setRole] = useState<"buyer" | "seller">(
-    searchParams.get("from") === "create-project" ? "buyer" : "buyer"
-  );
+  // Buyer is pre-selected by default — landing page CTA is "Create Project" (buyer-focused).
+  const [role, setRole] = useState<"buyer" | "seller">("buyer");
   const [email, setEmail] = useState("");
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
-
-  // Always default to buyer (landing page is buyer-focused)
-  useEffect(() => {
-    setRole("buyer");
-  }, []);
 
   function handleSubmit(e: FormEvent) {
     e.preventDefault();

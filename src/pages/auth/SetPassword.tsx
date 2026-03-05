@@ -144,21 +144,15 @@ export function SetPassword() {
               </div>
             </div>
 
-            {/* Password validation indicators */}
-            <div className="flex flex-col gap-2">
+            {/* Password validation indicators — only shown once user starts typing confirm */}
+            {confirm.length > 0 && (
               <div className="flex items-center gap-2">
-                <CheckIcon />
-                <span className={`text-sm ${passwordsMatch ? "text-teal-600" : "text-neutral-400"}`}>
-                  Passwords matching
+                {passwordsMatch ? <CheckIcon /> : <XIcon />}
+                <span className={`text-sm ${passwordsMatch ? "text-teal-600" : "text-rose-500"}`}>
+                  {passwordsMatch ? "Passwords match" : "Passwords do not match"}
                 </span>
               </div>
-              <div className="flex items-center gap-2">
-                <XIcon />
-                <span className={`text-sm ${passwordsMismatch ? "text-rose-500" : "text-neutral-400"}`}>
-                  Passwords must match
-                </span>
-              </div>
-            </div>
+            )}
 
             <Button
               type="submit"

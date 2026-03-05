@@ -30,8 +30,8 @@ export function WaitingScreen() {
         <NuqleiLogo size="md" variant="white" />
 
         <div className="flex flex-col gap-2">
-          <h1 className="text-white text-3xl font-bold">Waiting screen</h1>
-          <p className="text-white/60 text-base">Project loading in Dashboard</p>
+          <h1 className="text-white text-3xl font-bold">Setting things up…</h1>
+          <p className="text-white/60 text-base">Your project is being sent to sellers</p>
         </div>
 
         {/* Loading dots */}

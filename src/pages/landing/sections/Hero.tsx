@@ -27,7 +27,7 @@ export function Hero() {
           </Link>
         </div>
         <div className="flex-1 flex items-center justify-center">
-          <img src={illustrationSrc} alt="Industrial automation illustration" className="max-w-full w-full max-w-lg" />
+          <img src={illustrationSrc} alt="Industrial automation illustration" className="w-full max-w-lg" />
         </div>
       </div>
     </section>

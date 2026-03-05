@@ -19,12 +19,12 @@ export function AccountVerifiedEmail() {
         to Create your project.
       </p>
 
-      {/* CTA Button */}
+      {/* CTA Button — activates account by setting a password, then sign-in leads to first project */}
       <Link
         to="/register/set-password"
         className="block w-full text-center py-3 px-6 rounded-full bg-sky-brand-500 text-white text-sm font-semibold hover:bg-sky-brand-600 transition-colors mb-8"
       >
-        Create your first project
+        Activate your account
       </Link>
 
       <p className="text-text-secondary text-sm leading-relaxed mb-4">
