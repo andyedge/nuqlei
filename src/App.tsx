@@ -12,6 +12,7 @@ import { VerificationPending } from "./pages/auth/VerificationPending";
 // Email mockups (open in new tab)
 import { RegistrationConfirmationEmail } from "./pages/email/RegistrationConfirmationEmail";
 import { AccountVerifiedEmail } from "./pages/email/AccountVerifiedEmail";
+import { SellerPreApprovedEmail } from "./pages/email/SellerPreApprovedEmail";
 
 // Onboarding — 3-step walkthrough
 import { WalkthroughStep1 } from "./pages/onboarding/WalkthroughStep1";
@@ -41,7 +42,8 @@ export function App() {
 
         {/* ── Email mockups (designed to open in a new browser tab) ───────── */}
         <Route path="/email/registration-confirmation" element={<RegistrationConfirmationEmail />} />
-        <Route path="/email/account-verified" element={<AccountVerifiedEmail />} />
+        <Route path="/email/account-verified"          element={<AccountVerifiedEmail />} />
+        <Route path="/email/seller-pre-approved"       element={<SellerPreApprovedEmail />} />
 
         {/* ── Onboarding walkthrough ─────────────────────────────────────── */}
         <Route path="/onboarding/step/1" element={<WalkthroughStep1 />} />
